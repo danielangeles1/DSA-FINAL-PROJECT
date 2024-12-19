@@ -18,7 +18,7 @@ public class Buyer implements Comparable<Buyer> {
 
     /**
      * constructs a Buyer with given details
-     * 
+     *
      * @param userName       username of buyer
      * @param officialName   official name of buyer
      * @param accountVersion account version of the buyer
@@ -31,7 +31,7 @@ public class Buyer implements Comparable<Buyer> {
 
     /**
      * Returns the official name of the buyer
-     * 
+     *
      * @return String official name
      */
     public String getName() {
@@ -40,7 +40,7 @@ public class Buyer implements Comparable<Buyer> {
 
     /**
      * Returns the username of the buyer
-     * 
+     *
      * @return the username
      */
     public String getUserName() {
@@ -49,7 +49,7 @@ public class Buyer implements Comparable<Buyer> {
 
     /**
      * Returns the account version of the buyer (0 or 1) (standerd or premium))
-     * 
+     *
      * @return the account version
      */
     public int getAccountVersion() {
@@ -58,7 +58,7 @@ public class Buyer implements Comparable<Buyer> {
 
     /**
      * Returns whether the buyer has bought a ticket
-     * 
+     *
      * @return boolean, true if the ticket is bought, false if not
      */
     public boolean getTicketBought() {
@@ -67,7 +67,7 @@ public class Buyer implements Comparable<Buyer> {
 
     /**
      * Sets whether the buyer has bought a ticket.
-     * 
+     *
      * @param ticketBought true if the ticket is bought, false otherwise
      */
     public void setTicketBought(boolean ticketBought) {
@@ -78,7 +78,7 @@ public class Buyer implements Comparable<Buyer> {
      * compares this buyer to another buyer for sorting
      * the comparison is based on account version and if equal
      * compares by the last name in the official name
-     * 
+     *
      * @param other the buyer to compare to
      * @return a negative value if this buyer is less
      *         0 if they are equal or a positive value if this buyer is greater
@@ -89,7 +89,7 @@ public class Buyer implements Comparable<Buyer> {
             Buyer e = (Buyer) other;
 
             if (e.getAccountVersion() == getAccountVersion())
-                return e.getName().split(" ")[1].compareTo(getName().split(" ")[1]);
+                return 0;
             else if (e.getAccountVersion() > getAccountVersion())
                 return 1;
             else
