@@ -55,16 +55,16 @@ public class Sales {
      * @param name the username to check
      * @return true if the username exists in the map, false otherwise.
      */
-     public static boolean ifPersonAlreadyBought(HashMap<Buyer, LocalTime> currPeople, String username)
-     {
-            for(Buyer i : currPeople.keySet())
-            {
-                if(i.getUserName().equals(username))
-                    return true;
-            }
+    public static boolean ifPersonAlreadyBought(HashMap<Buyer, LocalTime> currPeople, String username)
+    {
+        for(Buyer i : currPeople.keySet())
+        {
+            if(i.getUserName().equals(username))
+                return true;
+        }
 
-            return false;
-     }
+        return false;
+    }
 
     /**
      * The main method to handle the presale and the during sale simulation
@@ -122,22 +122,22 @@ public class Sales {
             if (person.getAccountVersion() == 1) {
                 PremiumBuyer buyerr = new PremiumBuyer("n", "j");
                 System.out.println("Your account: \n" + "Username: " + person.getUserName() + "\n" +
-                    "Name: " + person.getName() + "\n" + "Account version: Premium" + "\n" + "Time Signed up: "
-                    + sortedMap.get(person) + "\nPurchase your ticket\n");
+                        "Name: " + person.getName() + "\n" + "Account version: Premium" + "\n" + "Time Signed up: "
+                        + sortedMap.get(person) + "\nPurchase your ticket\n");
                 System.out.println("Premium Account Ticket Price is " + 25 * buyerr.getDiscount());
                 System.out.println("Type y for purchase confirmation; n for decline");
                 if (ob.nextLine().equals("y")) {
                     person.setTicketBought(true);
                     ticketsBought.add(person);
-                    System.out.println("Thank you for buying, see you in 3 days");
+                    System.out.println("Thank you for buying, see you in 3 days\n\n");
                 } else {
-                    System.out.println("Sorry to hear that. See you next time");
+                    System.out.println("Sorry to hear that. See you next time\n\n");
                 }
             } else {
                 String ver = person.getAccountVersion() == 1 ? "Premium" : "Standard";
                 System.out.println("Your account: \n" + "Username: " + person.getUserName() + "\n" +
-                    "Name: " + person.getName() + "\n" + "Account version: " + ver + "\n" +
-                    "Time Signed up: " + sortedMap.get(person) + "\nPurchase your ticket\n");
+                        "Name: " + person.getName() + "\n" + "Account version: " + ver + "\n" +
+                        "Time Signed up: " + sortedMap.get(person) + "\nPurchase your ticket\n");
                 System.out.println("Ticket Price is 25");
                 System.out.println("Type y for purchase confirmation; n for decline");
                 if (ob.nextLine().equals("y")) {
@@ -145,7 +145,7 @@ public class Sales {
                     ticketsBought.add(person);
                     System.out.println("Thank you for buying, see you in 3 days\n\n\nNext Buyer Purchase Your Ticket\n");
                 } else {
-                    System.out.println("Sorry to hear that. See you next time\n\n\nNext Buyer Purchase Your Ticket\n");
+                    System.out.println("Sorry to hear that. See you next time\n\n\n");
                 }
             }
         }
@@ -153,10 +153,10 @@ public class Sales {
         System.out.println("List of buyers: ");
         if(ticketsBought.isEmpty())
             System.out.println("No buyers");
-        else 
+        else
         {
-        for(Buyer i : ticketsBought)
-            System.out.println("   " + i.getName());
+            for(Buyer i : ticketsBought)
+                System.out.println("   " + i.getName());
         }
 
     }
